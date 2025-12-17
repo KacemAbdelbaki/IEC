@@ -1,0 +1,9 @@
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {\filterminitoc {2.}1}Introduction}{\reset@font\mtcSfont 5}{section.2.1}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {\filterminitoc {2.}2}Interactive Evolutionary Computation (IEC)}{\reset@font\mtcSfont 5}{section.2.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {\filterminitoc {2.}2.1}The Role of the Human}{\reset@font\mtcSSfont 5}{subsection.2.2.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {\filterminitoc {2.}2.2}The Fatigue Problem}{\reset@font\mtcSSfont 5}{subsection.2.2.2}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {\filterminitoc {2.}3}Eye-Tracking Technology}{\reset@font\mtcSfont 5}{section.2.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {\filterminitoc {2.}3.1}Key Metrics}{\reset@font\mtcSSfont 5}{subsection.2.3.1}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {\filterminitoc {2.}4}Learning to Rank}{\reset@font\mtcSfont 6}{section.2.4}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {\filterminitoc {2.}4.1}Support Vector Machines (SVM)}{\reset@font\mtcSSfont 6}{subsection.2.4.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {\filterminitoc {2.}4.2}Gradient Boosting (LightGBM)}{\reset@font\mtcSSfont 6}{subsection.2.4.2}}

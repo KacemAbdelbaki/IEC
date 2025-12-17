@@ -1,0 +1,143 @@
+%\selectlanguage{english}
+\documentclass[pfe, titlesmallcaps]{./tpl/isipfe}
+% To enable links of references uncomment the line below
+\usepackage{hyperref}
+\input{./tpl/new_commands}
+
+%=========================biblio====================%
+\usepackage[sorting=none]{biblatex}
+\defbibheading{netographie}{%
+  \chapter*{Netographie}%
+}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  filecolor=black,
+  urlcolor=blue,
+  citecolor=black
+}
+\addbibresource{biblio.bib} % Import the bibliography file
+% Customize bibliography appearance
+\DeclareBibliographyDriver{online}{%
+  \printfield{title} \newline
+  \printfield{url} \newline
+  \printfield{note} \par
+}
+%=========================CUSTOM====================%
+% Define a custom blue color
+\definecolor{myblue}{HTML}{0066b2}
+
+% Define a custom list environment
+\newenvironment{mylist}{
+  \begin{list}{$\bullet$}{
+    \setlength{\leftmargin}{2.6em} % adjust the left margin
+    \setlength{\itemsep}{0.3em} % adjust the vertical space between items
+    \setlength{\parsep}{0pt} % remove extra vertical space
+    \setlength{\topsep}{0pt} % remove extra vertical space
+  }
+}{
+  \end{list}
+}
+
+\newenvironment{circlist}{
+  \begin{list}{$\circ$}{  % Change $\bullet$ to $\circ$ for a circle
+    \setlength{\leftmargin}{2.6em} % adjust the left margin
+    \setlength{\itemsep}{0.3em} % adjust the vertical space between items
+    \setlength{\parsep}{0pt} % remove extra vertical space
+    \setlength{\topsep}{0pt} % remove extra vertical space
+  }
+}{
+  \end{list}
+}
+\newenvironment{diamlist}{
+  \begin{list}{$\diamond$}{  % Change $\bullet$ to $\circ$ for a circle
+    \setlength{\leftmargin}{2.6em} % adjust the left margin
+    \setlength{\itemsep}{0.3em} % adjust the vertical space between items
+    \setlength{\parsep}{0pt} % remove extra vertical space
+    \setlength{\topsep}{0pt} % remove extra vertical space
+  }
+}{
+  \end{list}
+}
+%=========================================%
+
+% Define the custom list environment 'enumlist'
+\newlist{enumlist}{enumerate}{1} % Define a new enumerate-based list
+\setlist[enumlist,1]{label=\arabic*.} % Set numbering to Arabic numerals
+
+\usepackage{float}
+\usepackage{tikz}
+\usetikzlibrary{shadows}
+\usepackage{rotating}
+
+%===================================================%
+\begin{document}
+    \input{global_config}
+    
+    \frontmatter
+    \pagenumbering{gobble} % Remove page numbers from the first pages    
+        % Page de garde
+        \thispagestyle{frontmatter}
+         %choose between
+            % \input{PageDeGarde.tex}
+            % \input{tpl/cover_page}
+        \thispagestyle{frontmatter}
+        % \input{abstract.tex}
+        \thispagestyle{frontmatter}
+        %choose between
+            % \input{Company_Supervisor_Appreciation}
+            % \input{tpl/signatures}
+        %\thispagestyle{frontmatter}
+        %choose between
+            % \input{Acknowledgement}
+            \input{remerciement}
+        %choose between
+            % \input{Dedication}
+            % \input{dedicaces}
+        %\thispagestyle{frontmatter}        
+        
+        %\setcounter{page}{0}
+        
+        \setcounter{secnumdepth}{11}
+        \setcounter{tocdepth}{2}
+        \dominitoc
+        \tableofcontents
+        %\adjustmtc
+        \thispagestyle{frontmatter}
+        
+        \listoffigures
+        \thispagestyle{frontmatter}
+        %\listoftables
+        \thispagestyle{frontmatter}
+        %%%\
+        %%%\input{acronymes} %(optional page)
+        %%%\thispagestyle{frontmatter}
+
+    \mainmatter
+        \setcounter{page}{1}
+        % \input{introduction}
+        %\clearpage
+
+        \input{chap_01}
+        \clearpage
+        
+        \input{chap_02}
+        \clearpage
+        
+        \input{chap_03}
+        \clearpage
+        
+        \input{chap_04}
+        \clearpage
+        
+        \input{chap_05}
+        \clearpage
+        
+        \input{conclusion}
+        \clearpage
+
+        \phantomsection 
+        \printbibliography[heading=bibintoc, title={References}] 
+        \clearpage
+    
+\end{document}

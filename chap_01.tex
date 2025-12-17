@@ -1,0 +1,31 @@
+\chapter{General Context of the Project}
+
+\section{Introduction}
+In computer science, "optimization" usually means finding the best mathematical solution. But in creative fields like design, art, or music, there is no math formula to say what is "good" or "bad." In these cases, we use \textbf{Interactive Evolutionary Computation (IEC)}. This method uses a human to choose the best solutions.
+
+However, this method has a big problem: the \textbf{"Human Bottleneck."} A human user gets tired very quickly if they have to look at hundreds of images. When they get tired, they make mistakes or stop the program too early. This project, done at the I3S Laboratory, tries to solve this problem by using Eye-Tracking technology to help the computer understand what the user likes, without asking them to click constantly.
+
+\section{Host Organization}
+\subsection{I3S Laboratory}
+The \textbf{I3S Laboratory} (Sophia Antipolis) is a research center for Computer Science. This project is part of a team that works on Evolutionary Algorithms and how humans interact with computers. My supervisor is Denis Pallez.
+
+\section{Problem Statement}
+\subsection{Why is the Human User a Problem?}
+Standard algorithms can check thousands of solutions in a second. But a human takes a long time to check just one. This leads to one main issue in IEC:
+\begin{mylist}
+    \item \textbf{Cognitive Fatigue:} The user gets tired after a few minutes. This means their choices become random and less consistent.
+\end{mylist}
+
+\section{Proposed Solution}
+To fix this, we want to replace the "Explicit" evaluation (conscious clicking) with an "Implicit" evaluation (subconscious looking).
+\subsection{Eye-Tracking as a Helper (Surrogate Model)}
+We use a \textbf{Tobii Pro Nano} eye-tracker to record where the user looks. Our goal is to train an AI model to act as a \textbf{Surrogate Fitness Function} (a replacement for the human).
+\begin{itemize}
+    \item The user looks at the screen naturally.
+    \item The eye-tracker records data like fixation time and pupil size.
+    \item Our Machine Learning model predicts which image the user prefers.
+    \item The algorithm uses this prediction to create the next generation of solutions.
+\end{itemize}
+
+\section*{Conclusion}
+This chapter explained the main context: we need to optimize Evolutionary Algorithms by reducing human fatigue. The manual selection process is too slow and tiring. In the next chapters, we will see how we can use machine learning algorithms, like Ranking SVM and LightGBM, to predict user preferences automatically.

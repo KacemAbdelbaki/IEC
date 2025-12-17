@@ -1,0 +1,87 @@
+
+%=== File containing Global Configuration of the report ===%
+%                                                          %
+% Copyright (C) ISI - All Rights Reserved                  %
+% Proprietary                                              %
+% Written by Med Hossam <med.hossam@gmail.com>, April 2016 %
+%                                                          %
+% @author: HEDHILI Med Houssemeddine                       %
+% @linkedin: http://tn.linkedin.com/in/medhossam           %
+%==========================================================%
+
+%=========== You MUST type your information here ==========%
+% global_config.tex file is designed to configure your     %
+% cover pages (main, back and black covers)                %
+%==========================================================%
+
+%========= Config the cover section ==========%
+
+\title{Portage et configuration d'un os temps réel avec les bsp ACTIA }
+
+\author{Mohamed DOGUI}
+%%% if necessary
+% Set isBinomal to true and type second author name
+%\setboolean{isBinomal}{true}
+%\secondAuthor{Prénom NOM 2}
+
+%% Nom du diplôme, Master, Ingénieur. etc..
+%%\diplomaName{Diplôme National de Master Professionnel en Sciences et Technologies }
+\mention{éléctriques}
+\speciality{Génie éléctriques}
+
+%% Encadrant professionnel
+\proFramerName{RIDENE Zaineb}
+
+
+%% Encadrant académique
+\academicFramerName{BEN TAARIT Kaouther  /   MHALLA Anis}
+
+
+%% Entreprise d'accueil
+\companyName{ACTIA}
+
+%% Année universitaire
+\collegeYear{2023 - 2024}
+
+
+%%%%%% Signatures section %%%%%%
+
+% You can simply remove theses sentences by typing an empty string
+% \proSignSentence{}
+
+\proSignSentence{J’autorise l’étudiant à déposer son rapport de stage en vue d’une soutenance.}
+
+\academicSignSentence{J’autorise l’étudiant à déposer son rapport de stage en vue d’une soutenance.}
+
+
+%%%%%% Config the backcover section %%%%%%
+
+%%% AR
+\arabicAbstract{ 
+يندرج هذا العمل ضمن مشروع نهاية دراستنا المقام بشركة \textLR{ACTIA}، 
+تتلخص أعمالنا في تنفيذ تطبيق ويب للتخطيط متعدد الخطوط لرحلة بالحافلة.
+وقد تم تطوير تطبيقنا باستخدام \textLR{SpringToolSuite} مع لغة البرمجة \textLR{C} و باستخدام \textLR{CodeBlocks} مع لغة البرمجة \textLR{C++} و أيضا باستخدام \textLR{WebStorm } مع \textLR{Angular 5}.
+}
+
+\arabicAbstractKeywords{ \textLR{ARDIA}، \textLR{SpringToolSuite}،  \textLR{CodeBlocks}،    \textLR{WebStorm}،   \textLR{Mémoire partagée POSIX}،  \textLR{OSM}،  \textLR{OSRM}،  \textLR{Leaflet}}
+
+%% To use latin characters inside the arabic text
+% just put them inside the command \textLR{}
+%%%%
+
+%%% FR (French Abstract)
+\frenchAbstract{
+L'Optimisation Interactive Évolutionnaire (IEC) utilise les choix humains pour résoudre des problèmes complexes (comme le design ou l'art). Cependant, l'utilisateur se fatigue vite à force d'évaluer des centaines de solutions : c'est le "Goulot d'étranglement humain". Ce projet propose une solution : utiliser un \textbf{Modèle de Substitution} basé sur l'Eye-Tracking. Au lieu de demander à l'utilisateur de noter chaque solution, nous analysons son regard pour deviner ses préférences. En utilisant des algorithmes comme LightGBM, nous avons réussi à prédire le classement de l'utilisateur avec une précision de \textbf{97\%}, ce qui permet d'optimiser le processus sans le fatiguer.
+}
+\frenchAbstractKeywords{IEC, Eye-Tracking, Machine Learning, Optimisation, LightGBM}
+
+%%% EN (English Abstract)
+\englishAbstract{
+Interactive Evolutionary Computation (IEC) relies on humans to evaluate solutions in creative fields. The main problem is that users get tired quickly after rating many options, which is called the "Human Bottleneck." This project proposes a solution using a \textbf{Surrogate Model} and Eye-Tracking technology. Instead of asking the user to manually rate everything, we analyze their eye movements to predict their preferences automatically. By using the LightGBM algorithm, we achieved a prediction accuracy of \textbf{97\%} (Kendall's Tau), proving that we can speed up optimization while reducing user fatigue.
+}
+\englishAbstractKeywords{IEC, Eye-Tracking, Machine Learning, Optimization, LightGBM}
+
+%% if you want to get rid of the company address just set the boolean variable to false
+% PS : it's optional
+\setboolean{wantToTypeCompanyAddress}{false}
+\companyAddress{}

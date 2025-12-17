@@ -1,0 +1,12 @@
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {\filterminitoc {5.}1}Introduction}{\reset@font\mtcSfont 15}{section.5.1}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {\filterminitoc {5.}2}Analysis of the Surrogate Model}{\reset@font\mtcSfont 15}{section.5.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {\filterminitoc {5.}2.1}Non-Linearity of User Preference}{\reset@font\mtcSSfont 15}{subsection.5.2.1}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {\filterminitoc {5.}3}Robustness and Validation}{\reset@font\mtcSfont 15}{section.5.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {\filterminitoc {5.}3.1}Temporal Generalization}{\reset@font\mtcSSfont 15}{subsection.5.3.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {\filterminitoc {5.}3.2}Subject Independence}{\reset@font\mtcSSfont 15}{subsection.5.3.2}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {\filterminitoc {5.}4}Limitations}{\reset@font\mtcSfont 16}{section.5.4}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {\filterminitoc {5.}4.1}Offline vs. Online Gap}{\reset@font\mtcSSfont 16}{subsection.5.4.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {\filterminitoc {5.}4.2}Hardware Constraints}{\reset@font\mtcSSfont 16}{subsection.5.4.2}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {\filterminitoc {5.}5}Future Work}{\reset@font\mtcSfont 16}{section.5.5}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {\filterminitoc {5.}5.1}Real-Time Integration}{\reset@font\mtcSSfont 16}{subsection.5.5.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {\filterminitoc {5.}5.2}Hybrid Optimization}{\reset@font\mtcSSfont 16}{subsection.5.5.2}}

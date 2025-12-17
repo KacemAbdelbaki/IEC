@@ -1,0 +1,10 @@
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {\filterminitoc {3.}1}Introduction}{\reset@font\mtcSfont 8}{section.3.1}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {\filterminitoc {3.}2}Data Acquisition and Features}{\reset@font\mtcSfont 8}{section.3.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {\filterminitoc {3.}2.1}Feature Extraction}{\reset@font\mtcSSfont 8}{subsection.3.2.1}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {\filterminitoc {3.}3}Data Preparation Strategy}{\reset@font\mtcSfont 8}{section.3.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {\filterminitoc {3.}3.1}Grouping by Person and Generation}{\reset@font\mtcSSfont 8}{subsection.3.3.1}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {\filterminitoc {3.}4}The Heuristic Baseline}{\reset@font\mtcSfont 8}{section.3.4}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {\filterminitoc {3.}5}Machine Learning Models}{\reset@font\mtcSfont 9}{section.3.5}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {\filterminitoc {3.}5.1}Ranking SVM (Pairwise Approach)}{\reset@font\mtcSSfont 9}{subsection.3.5.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {\filterminitoc {3.}5.2}LightGBM (Listwise Approach)}{\reset@font\mtcSSfont 9}{subsection.3.5.2}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {\filterminitoc {3.}5.2.1}Relevance Score Transformation}{\reset@font\mtcSSSfont 9}{subsubsection.3.5.2.1}}

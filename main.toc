@@ -1,0 +1,50 @@
+\babel@toc {english}{}\relax 
+\babel@toc {english}{}\relax 
+\contentsline {chapter}{\numberline {1}General Context of the Project}{1}{chapter.1}%
+\contentsline {section}{\numberline {\filterminitoc {1.}1}Introduction}{2}{section.1.1}%
+\contentsline {section}{\numberline {\filterminitoc {1.}2}Host Organization}{2}{section.1.2}%
+\contentsline {subsection}{\numberline {\filterminitoc {1.}2.1}I3S Laboratory}{2}{subsection.1.2.1}%
+\contentsline {section}{\numberline {\filterminitoc {1.}3}Problem Statement}{2}{section.1.3}%
+\contentsline {subsection}{\numberline {\filterminitoc {1.}3.1}Why is the Human User a Problem?}{2}{subsection.1.3.1}%
+\contentsline {section}{\numberline {\filterminitoc {1.}4}Proposed Solution}{2}{section.1.4}%
+\contentsline {subsection}{\numberline {\filterminitoc {1.}4.1}Eye-Tracking as a Helper (Surrogate Model)}{3}{subsection.1.4.1}%
+\contentsline {chapter}{\numberline {2}State of the Art}{4}{chapter.2}%
+\contentsline {section}{\numberline {\filterminitoc {2.}1}Introduction}{5}{section.2.1}%
+\contentsline {section}{\numberline {\filterminitoc {2.}2}Interactive Evolutionary Computation (IEC)}{5}{section.2.2}%
+\contentsline {subsection}{\numberline {\filterminitoc {2.}2.1}The Role of the Human}{5}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {\filterminitoc {2.}2.2}The Fatigue Problem}{5}{subsection.2.2.2}%
+\contentsline {section}{\numberline {\filterminitoc {2.}3}Eye-Tracking Technology}{5}{section.2.3}%
+\contentsline {subsection}{\numberline {\filterminitoc {2.}3.1}Key Metrics}{5}{subsection.2.3.1}%
+\contentsline {section}{\numberline {\filterminitoc {2.}4}Learning to Rank}{6}{section.2.4}%
+\contentsline {subsection}{\numberline {\filterminitoc {2.}4.1}Support Vector Machines (SVM)}{6}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {\filterminitoc {2.}4.2}Gradient Boosting (LightGBM)}{6}{subsection.2.4.2}%
+\contentsline {chapter}{\numberline {3}Methodology and Implementation}{7}{chapter.3}%
+\contentsline {section}{\numberline {\filterminitoc {3.}1}Introduction}{8}{section.3.1}%
+\contentsline {section}{\numberline {\filterminitoc {3.}2}Data Acquisition and Features}{8}{section.3.2}%
+\contentsline {subsection}{\numberline {\filterminitoc {3.}2.1}Feature Extraction}{8}{subsection.3.2.1}%
+\contentsline {section}{\numberline {\filterminitoc {3.}3}Data Preparation Strategy}{8}{section.3.3}%
+\contentsline {subsection}{\numberline {\filterminitoc {3.}3.1}Grouping by Person and Generation}{8}{subsection.3.3.1}%
+\contentsline {section}{\numberline {\filterminitoc {3.}4}The Heuristic Baseline}{8}{section.3.4}%
+\contentsline {section}{\numberline {\filterminitoc {3.}5}Machine Learning Models}{9}{section.3.5}%
+\contentsline {subsection}{\numberline {\filterminitoc {3.}5.1}Ranking SVM (Pairwise Approach)}{9}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {\filterminitoc {3.}5.2}LightGBM (Listwise Approach)}{9}{subsection.3.5.2}%
+\contentsline {subsubsection}{\numberline {\filterminitoc {3.}5.2.1}Relevance Score Transformation}{9}{subsubsection.3.5.2.1}%
+\contentsline {chapter}{\numberline {4}Experiments and Results}{11}{chapter.4}%
+\contentsline {section}{\numberline {\filterminitoc {4.}1}Introduction}{12}{section.4.1}%
+\contentsline {section}{\numberline {\filterminitoc {4.}2}Evaluation Metric: Kendall's Tau}{12}{section.4.2}%
+\contentsline {section}{\numberline {\filterminitoc {4.}3}Experimental Results}{12}{section.4.3}%
+\contentsline {subsection}{\numberline {\filterminitoc {4.}3.1}Performance Comparison}{12}{subsection.4.3.1}%
+\contentsline {chapter}{\numberline {5}Discussion and Perspectives}{14}{chapter.5}%
+\contentsline {section}{\numberline {\filterminitoc {5.}1}Introduction}{15}{section.5.1}%
+\contentsline {section}{\numberline {\filterminitoc {5.}2}Analysis of the Surrogate Model}{15}{section.5.2}%
+\contentsline {subsection}{\numberline {\filterminitoc {5.}2.1}Non-Linearity of User Preference}{15}{subsection.5.2.1}%
+\contentsline {section}{\numberline {\filterminitoc {5.}3}Robustness and Validation}{15}{section.5.3}%
+\contentsline {subsection}{\numberline {\filterminitoc {5.}3.1}Temporal Generalization}{15}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {\filterminitoc {5.}3.2}Subject Independence}{15}{subsection.5.3.2}%
+\contentsline {section}{\numberline {\filterminitoc {5.}4}Limitations}{16}{section.5.4}%
+\contentsline {subsection}{\numberline {\filterminitoc {5.}4.1}Offline vs. Online Gap}{16}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {\filterminitoc {5.}4.2}Hardware Constraints}{16}{subsection.5.4.2}%
+\contentsline {section}{\numberline {\filterminitoc {5.}5}Future Work}{16}{section.5.5}%
+\contentsline {subsection}{\numberline {\filterminitoc {5.}5.1}Real-Time Integration}{16}{subsection.5.5.1}%
+\contentsline {subsection}{\numberline {\filterminitoc {5.}5.2}Hybrid Optimization}{16}{subsection.5.5.2}%
+\contentsline {chapter}{General Conclusion}{18}{chapter*.5}%

@@ -1,0 +1,50 @@
+\chapter{Discussion and Perspectives}
+
+\section{Introduction}
+In the previous chapter, we demonstrated that the LightGBM model could predict user rankings with near-perfect accuracy ($\tau \approx 0.97$), significantly outperforming both the heuristic baseline and the Ranking SVM. In this final chapter, we analyze these results in depth, discuss the validity of our testing strategy, and propose concrete steps for future implementation.
+
+\section{Analysis of the Surrogate Model}
+The primary objective of this project was to determine if eye-tracking data could effectively replace explicit human evaluation. Our results confirm this hypothesis with strong statistical evidence.
+
+\subsection{Non-Linearity of User Preference}
+The failure of the Baseline Formula ($\tau \approx 0.36$) highlights that human gaze behavior is not linear. A user does not simply "look longer at what they like."
+LightGBM succeeded because it captures non-linear interactions. For example, it can learn complex rules such as:
+\begin{center}
+    \textit{"If Fixation Time is short BUT Pupil Diameter spikes, then Relevance is High."}
+\end{center}
+This ability to model conditional dependencies is why decision-tree ensembles are superior to linear models (like the baseline) or hyperplane-based models (like SVM) for physiological data.
+
+\section{Robustness and Validation}
+A critical aspect of this study was ensuring that the model is not just memorizing data, but learning general human behavior.
+
+\subsection{Temporal Generalization}
+By strictly separating the training data (past generations) from the test data (future generations), we proved that the model can handle "Concept Drift." It successfully predicted user preferences in later generations based solely on learning from the earlier ones.
+
+\subsection{Subject Independence}
+Through our \textbf{Leave-Subjects-Out Cross-Validation}, we observed that the model maintains high accuracy even for users it has never seen before. This implies that there are universal gaze patterns (e.g., pupil dilation upon interest) shared across different individuals, making the system viable for a general population without requiring extensive per-user retraining.
+
+\section{Limitations}
+Despite the promising results, several limitations must be acknowledged.
+
+\subsection{Offline vs. Online Gap}
+Our experiments were conducted "Offline" using pre-recorded datasets. In a real-time "Online" scenario, the computation time for feature extraction and prediction must be minimal (under 200ms) to avoid disrupting the user experience. While LightGBM is fast, the entire pipeline (Gaze Capture $\rightarrow$ Cleaning $\rightarrow$ Prediction) has not yet been stress-tested in a live loop.
+
+\subsection{Hardware Constraints}
+We utilized a 60Hz eye-tracker (\textbf{Tobii Pro Nano}). While sufficient for fixation analysis, it misses high-velocity micro-saccades. Higher frequency hardware (120Hz+) could unlock additional features that might further stabilize predictions in noisy environments.
+
+\section{Future Work}
+Based on these findings, we propose the following roadmap for the next phase of research.
+
+\subsection{Real-Time Integration}
+The immediate next step is to embed the trained LightGBM model into the IEC software. The workflow would be:
+\begin{enumerate}
+    \item \textbf{Observation Phase:} The user looks at the population for 5-10 seconds.
+    \item \textbf{Implicit Ranking:} The model predicts the fitness of all individuals.
+    \item \textbf{Evolution:} The algorithm generates the next generation automatically.
+\end{enumerate}
+
+\subsection{Hybrid Optimization}
+To prevent model drift over long sessions, a \textbf{Hybrid Approach} is recommended. The system could run implicitly for several generations, but interrupt every $N^{th}$ generation to ask the user for a manual validation. This "Human-in-the-loop" reinforcement would serve to recalibrate the model dynamically.
+
+\section*{Conclusion}
+We have established that implicit gaze analysis is a powerful tool for evolutionary computation. By leveraging advanced machine learning, we can bridge the gap between human intention and algorithmic optimization.
