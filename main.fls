@@ -1,6 +1,6 @@
-PWD C:\Users\abdel\Downloads\rapport_huawei__Copy_
+PWD c:\Users\abdel\Downloads\rapport_huawei__Copy_
 INPUT C:\Users\abdel\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT main.tex
+INPUT c:\Users\abdel\Downloads\rapport_huawei__Copy_\main.tex
 OUTPUT main.log
 INPUT .\tpl\isipfe.cls
 INPUT tpl\isipfe.cls
@@ -1099,6 +1099,13 @@ INPUT .\main.mtc
 INPUT main.mtc
 OUTPUT main.mtc
 INPUT main.mtc4
+INPUT .\images\results_graph.png
+INPUT .\images\results_graph.png
+INPUT .\images\results_graph.png
+INPUT .\images\results_graph.png
+INPUT .\images\results_graph.png
+INPUT .\images\results_graph.png
+INPUT .\images\results_graph.png
 INPUT .\chap_05.tex
 INPUT .\chap_05.tex
 INPUT .\chap_05.tex
