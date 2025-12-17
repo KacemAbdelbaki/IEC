@@ -6,7 +6,6 @@
 *.fdb_latexmk
 *.fls
 *.lof
-*.log
 *.maf
 *.mtc
 *.mtc0
