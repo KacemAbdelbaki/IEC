@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.16)  17 DEC 2025 15:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.17)  17 DEC 2025 15:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1237,6 +1237,16 @@ Package biblatex Info: ... file 'blx-compat.def' found.
  (D:\Studies\MiKTeX\tex/latex/biblatex\blx-compat.def
 File: blx-compat.def 2025/07/10 v3.21 biblatex compatibility (PK/MW)
 )
+Package biblatex Info: Trying to load BibTeX backend compatibility...
+Package biblatex Info: ... file 'blx-bibtex.def' found.
+ (D:\Studies\MiKTeX\tex/latex/biblatex\blx-bibtex.def
+File: blx-bibtex.def 2025/07/10 v3.21 biblatex compatibility (PK/MW)
+
+
+Package biblatex Warning: Using fall-back bibtex backend:
+(biblatex)                functionality may be reduced/unavailable.
+
+)
 Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
  (D:\Studies\MiKTeX\tex/latex/biblatex\biblatex.def
@@ -1498,7 +1508,10 @@ File: french.lbx 2025/07/10 v3.21 biblatex localization (PK/MW)
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
-\openout5 = `main.bcf'.
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Data encoding 'utf8' specified.
+(biblatex)             No need to reencode data.
+\openout5 = `main-blx.bib'.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
@@ -1560,6 +1573,10 @@ Package minitoc Info: I0033
 Package minitoc Info: I0033
 (minitoc)             Writing main.mtc6.
 \openout3 = `main.mtc6'.
+
+Package minitoc Info: I0033
+(minitoc)             Writing main.mtc7.
+\openout3 = `main.mtc7'.
 
  (main.toc
 LaTeX Font Info:    Trying to load font information for OT1+minntx on input line 4.
@@ -1771,7 +1788,7 @@ Chapter 4.
 
 
 ] [12]
-<images/results_graph.png, id=381, 726.3135pt x 438.6789pt>
+<images/results_graph.png, id=386, 726.3135pt x 438.6789pt>
 File: images/results_graph.png Graphic file (type png)
 <use images/results_graph.png>
 Package pdftex.def Info: images/results_graph.png  used on input line 45.
@@ -1789,13 +1806,21 @@ Chapter 5.
 
 
 ]
+LaTeX Font Info:    Trying to load font information for T1+ntxtt on input line 141.
+ (D:\Studies\MiKTeX\tex/latex/newtx\t1ntxtt.fd
+File: t1ntxtt.fd 2012/04/20 v3.1
+)
+LaTeX Font Info:    Font shape `T1/ntxtt/m/n' will be
+(Font)              scaled to size 12.0pt on input line 141.
+ [19
 
-LaTeX Warning: Empty bibliography on input line 141.
 
+]
 Package minitoc Info: I0009
 (minitoc)             Listing minitoc auxiliary files. 
 (minitoc)             Creating the main.maf file.
 \openout3 = `main.maf'.
+
 
 
 Package minitoc(hints) Warning: W0033
@@ -1812,41 +1837,31 @@ Package minitoc(hints) Warning: W0024
 (minitoc(hints))                Some hints have been written 
 (minitoc(hints))                in the main.log file.
 
-[19
-
+[20
 
 ] (main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 4C7A7F3DACC753F72404CD207BCB05B2;8204.
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                main
-(biblatex)                and rerun LaTeX afterwards.
-
+(rerunfilecheck)             Checksum: 7368A09DDE7B0410FB07A50E6841E769;8299.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 47839 strings out of 467871
- 920391 string characters out of 5431362
- 1806804 words of memory out of 5000000
- 75906 multiletter control sequences out of 15000+600000
- 705218 words of font info for 116 fonts, out of 8000000 for 9000
+ 48205 strings out of 467871
+ 928386 string characters out of 5431362
+ 1755044 words of memory out of 5000000
+ 76253 multiletter control sequences out of 15000+600000
+ 705540 words of font info for 117 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 105i,12n,131p,1228b,2280s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<D:/Studies/MiKTeX/fonts/type1/public/newtx/NewTXMI.pfb><D:/Studies/MiKTeX/fonts/type1/public/tex-gyre/qtmr.pfb><D:/Studies/MiKTeX/fonts/type1/public/newtx/txmiaX.pfb><D:/Studies/MiKTeX/fonts/type1/public/newtx/txsys.pfb><D:/Studies/MiKTeX/fonts/type1/public/newtx/ztmb.pfb><D:/Studies/MiKTeX/fonts/type1/public/newtx/ztmbi.pfb><D:/Studies/MiKTeX/fonts/type1/public/newtx/ztmr.pfb><D:/Studies/MiKTeX/fonts/type1/public/newtx/ztmri.pfb>
-Output written on main.pdf (23 pages, 313136 bytes).
+ 105i,12n,131p,1926b,2280s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<D:/Studies/MiKTeX/fonts/type1/public/newtx/NewTXMI.pfb><D:/Studies/MiKTeX/fonts/type1/public/tex-gyre/qtmr.pfb><D:/Studies/MiKTeX/fonts/type1/public/txfonts/t1xtt.pfb><D:/Studies/MiKTeX/fonts/type1/public/newtx/txmiaX.pfb><D:/Studies/MiKTeX/fonts/type1/public/newtx/txsys.pfb><D:/Studies/MiKTeX/fonts/type1/public/newtx/ztmb.pfb><D:/Studies/MiKTeX/fonts/type1/public/newtx/ztmbi.pfb><D:/Studies/MiKTeX/fonts/type1/public/newtx/ztmr.pfb><D:/Studies/MiKTeX/fonts/type1/public/newtx/ztmri.pfb>
+Output written on main.pdf (24 pages, 327615 bytes).
 PDF statistics:
- 494 PDF objects out of 1000 (max. 8388607)
- 85 named destinations out of 1000 (max. 500000)
- 490 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 522 PDF objects out of 1000 (max. 8388607)
+ 95 named destinations out of 1000 (max. 500000)
+ 498 words of extra memory for PDF output out of 10000 (max. 10000000)
 

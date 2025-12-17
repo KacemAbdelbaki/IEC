@@ -48,3 +48,4 @@
 \contentsline {subsection}{\numberline {\filterminitoc {5.}5.1}Real-Time Integration}{16}{subsection.5.5.1}%
 \contentsline {subsection}{\numberline {\filterminitoc {5.}5.2}Hybrid Optimization}{16}{subsection.5.5.2}%
 \contentsline {chapter}{General Conclusion}{18}{chapter*.5}%
+\contentsline {chapter}{References}{19}{chapter*.7}%

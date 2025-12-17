@@ -1,0 +1,289 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{none/global//global/global/global}
+  \entry{pallez2007eye}{inproceedings}{}{}
+    \name{author}{4}{}{%
+      {{hash=PD}{%
+         family={Pallez},
+         familyi={P\bibinitperiod},
+         given={Denis},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=CP}{%
+         family={Collard},
+         familyi={C\bibinitperiod},
+         given={Philippe},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=BT}{%
+         family={Baccino},
+         familyi={B\bibinitperiod},
+         given={Thierry},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=DL}{%
+         family={Dumercy},
+         familyi={D\bibinitperiod},
+         given={Laurent},
+         giveni={L\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {ACM}%
+    }
+    \strng{namehash}{PD+1}
+    \strng{fullhash}{PDCPBTDL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{Proceedings of the 9th annual conference companion on
+  Genetic and evolutionary computation}
+    \field{pages}{2933\bibrangedash 2936}
+    \field{title}{Eye-tracking evolutionary algorithm to minimize user's
+  fatigue in IEC applied to interactive one-max problem}
+    \field{year}{2007}
+  \endentry
+
+  \entry{takagi2001interactive}{article}{}{}
+    \name{author}{1}{}{%
+      {{hash=TH}{%
+         family={Takagi},
+         familyi={T\bibinitperiod},
+         given={Hideyuki},
+         giveni={H\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {IEEE}%
+    }
+    \strng{namehash}{TH1}
+    \strng{fullhash}{TH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{number}{9}
+    \field{pages}{1275\bibrangedash 1296}
+    \field{title}{Interactive evolutionary computation: Fusion of the
+  capabilities of EC optimization and human evaluation}
+    \field{volume}{89}
+    \field{journaltitle}{Proceedings of the IEEE}
+    \field{year}{2001}
+  \endentry
+
+  \entry{yan2024survey}{article}{}{}
+    \name{author}{1}{}{%
+      {{hash=YP}{%
+         family={Yan},
+         familyi={Y\bibinitperiod},
+         given={Pei},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier}%
+    }
+    \strng{namehash}{YP1}
+    \strng{fullhash}{YP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1016/j.asoc.2024.111950
+    \endverb
+    \field{pages}{111950}
+    \field{title}{A comprehensive survey on interactive evolutionary
+  computation in the first two decades of the 21st century}
+    \field{volume}{152}
+    \field{journaltitle}{Applied Soft Computing}
+    \field{year}{2024}
+  \endentry
+
+  \entry{rayner1998eye}{article}{}{}
+    \name{author}{1}{}{%
+      {{hash=RK}{%
+         family={Rayner},
+         familyi={R\bibinitperiod},
+         given={Keith},
+         giveni={K\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {American Psychological Association}%
+    }
+    \strng{namehash}{RK1}
+    \strng{fullhash}{RK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{number}{3}
+    \field{pages}{372\bibrangedash 422}
+    \field{title}{Eye movements in reading and information processing: 20 years
+  of research}
+    \field{volume}{124}
+    \field{journaltitle}{Psychological bulletin}
+    \field{year}{1998}
+  \endentry
+
+  \entry{cortes1995support}{article}{}{}
+    \name{author}{2}{}{%
+      {{hash=CC}{%
+         family={Cortes},
+         familyi={C\bibinitperiod},
+         given={Corinna},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=VV}{%
+         family={Vapnik},
+         familyi={V\bibinitperiod},
+         given={Vladimir},
+         giveni={V\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{CCVV1}
+    \strng{fullhash}{CCVV1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{number}{3}
+    \field{pages}{273\bibrangedash 297}
+    \field{title}{Support-vector networks}
+    \field{volume}{20}
+    \field{journaltitle}{Machine learning}
+    \field{year}{1995}
+  \endentry
+
+  \entry{joachims2002optimizing}{inproceedings}{}{}
+    \name{author}{1}{}{%
+      {{hash=JT}{%
+         family={Joachims},
+         familyi={J\bibinitperiod},
+         given={Thorsten},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {ACM}%
+    }
+    \strng{namehash}{JT1}
+    \strng{fullhash}{JT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{Proceedings of the eighth ACM SIGKDD international
+  conference on Knowledge discovery and data mining}
+    \field{note}{Foundational paper for Ranking SVM}
+    \field{pages}{133\bibrangedash 142}
+    \field{title}{Optimizing search engines using clickthrough data}
+    \field{year}{2002}
+  \endentry
+
+  \entry{ke2017lightgbm}{inproceedings}{}{}
+    \name{author}{8}{}{%
+      {{hash=KG}{%
+         family={Ke},
+         familyi={K\bibinitperiod},
+         given={Guolin},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=MQ}{%
+         family={Meng},
+         familyi={M\bibinitperiod},
+         given={Qi},
+         giveni={Q\bibinitperiod},
+      }}%
+      {{hash=FT}{%
+         family={Finley},
+         familyi={F\bibinitperiod},
+         given={Thomas},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=WT}{%
+         family={Wang},
+         familyi={W\bibinitperiod},
+         given={Taifeng},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=CW}{%
+         family={Chen},
+         familyi={C\bibinitperiod},
+         given={Wei},
+         giveni={W\bibinitperiod},
+      }}%
+      {{hash=MW}{%
+         family={Ma},
+         familyi={M\bibinitperiod},
+         given={Weidong},
+         giveni={W\bibinitperiod},
+      }}%
+      {{hash=YQ}{%
+         family={Ye},
+         familyi={Y\bibinitperiod},
+         given={Qiwei},
+         giveni={Q\bibinitperiod},
+      }}%
+      {{hash=LTY}{%
+         family={Liu},
+         familyi={L\bibinitperiod},
+         given={Tie-Yan},
+         giveni={T\bibinithyphendelim Y\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{KG+1}
+    \strng{fullhash}{KGMQFTWTCWMWYQLTY1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{Advances in neural information processing systems
+  (NeurIPS)}
+    \field{pages}{3146\bibrangedash 3154}
+    \field{title}{LightGBM: A highly efficient gradient boosting decision tree}
+    \field{year}{2017}
+  \endentry
+
+  \entry{herbrich2000large}{incollection}{}{}
+    \name{author}{3}{}{%
+      {{hash=HR}{%
+         family={Herbrich},
+         familyi={H\bibinitperiod},
+         given={Ralf},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=GT}{%
+         family={Graepel},
+         familyi={G\bibinitperiod},
+         given={Thore},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=OK}{%
+         family={Obermayer},
+         familyi={O\bibinitperiod},
+         given={Klaus},
+         giveni={K\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {MIT Press}%
+    }
+    \strng{namehash}{HRGTOK1}
+    \strng{fullhash}{HRGTOK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{Advances in large margin classifiers}
+    \field{pages}{115\bibrangedash 132}
+    \field{title}{Large margin rank boundaries for ordinal regression}
+    \field{year}{2000}
+  \endentry
+\enddatalist
+\endinput

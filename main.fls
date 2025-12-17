@@ -843,6 +843,9 @@ INPUT D:\Studies\MiKTeX\tex\latex\biblatex\blx-dm.def
 INPUT D:\Studies\MiKTeX\tex\latex\biblatex\blx-compat.def
 INPUT D:\Studies\MiKTeX\tex\latex\biblatex\blx-compat.def
 INPUT D:\Studies\MiKTeX\tex\latex\biblatex\blx-compat.def
+INPUT D:\Studies\MiKTeX\tex\latex\biblatex\blx-bibtex.def
+INPUT D:\Studies\MiKTeX\tex\latex\biblatex\blx-bibtex.def
+INPUT D:\Studies\MiKTeX\tex\latex\biblatex\blx-bibtex.def
 INPUT D:\Studies\MiKTeX\tex\latex\biblatex\biblatex.def
 INPUT D:\Studies\MiKTeX\tex\latex\biblatex\biblatex.def
 INPUT D:\Studies\MiKTeX\tex\latex\biblatex\biblatex.def
@@ -913,7 +916,7 @@ INPUT D:\Studies\MiKTeX\tex\latex\biblatex\lbx\english.lbx
 INPUT D:\Studies\MiKTeX\tex\latex\biblatex\lbx\french.lbx
 INPUT D:\Studies\MiKTeX\tex\latex\biblatex\lbx\french.lbx
 INPUT D:\Studies\MiKTeX\tex\latex\biblatex\lbx\french.lbx
-OUTPUT main.bcf
+OUTPUT main-blx.bib
 INPUT main.bbl
 INPUT .\main.bbl
 INPUT .\main.bbl
@@ -943,6 +946,7 @@ OUTPUT main.mtc3
 OUTPUT main.mtc4
 OUTPUT main.mtc5
 OUTPUT main.mtc6
+OUTPUT main.mtc7
 INPUT .\main.toc
 INPUT .\main.toc
 INPUT main.toc
@@ -1125,6 +1129,10 @@ INPUT .\conclusion.tex
 INPUT .\conclusion.tex
 INPUT .\conclusion.tex
 INPUT conclusion.tex
+INPUT D:\Studies\MiKTeX\tex\latex\newtx\t1ntxtt.fd
+INPUT D:\Studies\MiKTeX\tex\latex\newtx\t1ntxtt.fd
+INPUT D:\Studies\MiKTeX\tex\latex\newtx\t1ntxtt.fd
+INPUT D:\Studies\MiKTeX\fonts\tfm\public\txfonts\t1xtt.tfm
 OUTPUT main.maf
 INPUT .\main.mtc
 INPUT .\main.mtc
@@ -1147,6 +1155,8 @@ INPUT D:\Studies\MiKTeX\fonts\type1\public\newtx\NewTXMI.pfb
 INPUT D:\Studies\MiKTeX\fonts\type1\public\newtx\NewTXMI.pfb
 INPUT D:\Studies\MiKTeX\fonts\type1\public\tex-gyre\qtmr.pfb
 INPUT D:\Studies\MiKTeX\fonts\type1\public\tex-gyre\qtmr.pfb
+INPUT D:\Studies\MiKTeX\fonts\type1\public\txfonts\t1xtt.pfb
+INPUT D:\Studies\MiKTeX\fonts\type1\public\txfonts\t1xtt.pfb
 INPUT D:\Studies\MiKTeX\fonts\type1\public\newtx\txmiaX.pfb
 INPUT D:\Studies\MiKTeX\fonts\type1\public\newtx\txmiaX.pfb
 INPUT D:\Studies\MiKTeX\fonts\type1\public\newtx\txsys.pfb
