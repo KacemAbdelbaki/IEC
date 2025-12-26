@@ -1,0 +1,110 @@
+
+%===== File containing the main cover of the document =====%
+%                                                          %
+% Copyright (C) ISI - All Rights Reserved                  %
+% Proprietary                                              %
+% Written by Med Hossam <med.hossam@gmail.com>, April 2016 %
+%                                                          %
+% @author: HEDHILI Med Houssemeddine                       %
+% @linkedin: http://tn.linkedin.com/in/medhossam           %
+%==========================================================%
+
+%== It's advised to not modify the content of this file ===%
+% To set your information, go to global_config.tex file    %
+%==========================================================%
+
+\thispagestyle{cover}%
+\hspace{-0.5cm}
+\begin{minipage}[l]{0.15\columnwidth}
+\vspace{6mm}
+\includegraphics[width=1.2\columnwidth]{./Images/Page_Garde/isitcomlogo.png}\\
+
+\end{minipage}
+\hfill
+\begin{minipage}[l]{0.6\columnwidth}
+\centering
+\footnotesize
+\textbf{{République Tunisienne}}\\
+\vspace{1.5mm}
+\textbf{{Ministère de l'Enseignement Supérieur \\et de la Recherche Scientifique}}\\
+\vspace{1.5mm}
+\textbf{{Université de  Monastir}}\\
+\vspace{1.5mm}
+\textbf{{Ecole Nationale d'ingénieur de Monastir}}
+\end{minipage}
+\hfill
+\begin{minipage}[l]{0.15\columnwidth}
+\vspace{6mm}
+\includegraphics[width=1\columnwidth]{img/enim.png}\\
+\end{minipage}
+\vskip0.8cm
+
+\begin{center}
+{\Large{\textbf{{RAPPORT DE PROJET DE FIN D'ÉTUDES}}}}\\
+\vskip0.5cm
+%%{\textbf{Présenté en vue de l'obtention du}}\\
+%%\vskip2mm
+%%\{\textbf{\@diplomaName}}\\
+{\textbf{Présenté en vue de l'obtention du}}\\
+{\textbf{Diplôme National d'Ingénieur en génie électriques}\\
+
+{}
+\end{center}
+
+\begin{center}
+\textrm{Par}\\
+\vskip0.3cm
+{\ifthenelse{\boolean{isBinomal}}
+    {% IF TRUE
+        \begin{minipage}[l]{0.3\columnwidth}
+            \begin{center}{\large\textbf{\@author}}\end{center}
+        \end{minipage}
+        
+    }
+    {\large\textbf{\@author}}% FALSE
+}
+\vskip12mm
+
+\definecolor{isiBlue}{RGB}{31, 78, 121}
+
+\begin{changemargin}{-9mm}{0cm}
+\begin{minipage}[l]{1.1\columnwidth}
+\begin{tcolorbox}[colframe=isiBlue,colback=white,boxrule=0pt,toprule=3pt,bottomrule=3pt,arc=2pt,top=0mm,right=0mm,left=0mm,bottom=0mm,boxsep=0.5mm]{
+    \begin{tcolorbox}[colframe=isiBlue,colback=white, boxrule=0pt,toprule=1pt,bottomrule=1pt,arc=1pt,enlarge bottom by=-0.9mm, auto outer arc]
+        \centering
+        {\huge\textbf{\@title}}
+    \end{tcolorbox}
+}
+\end{tcolorbox}
+\end{minipage}
+\end{changemargin}
+
+\end{center}
+\vskip8mm
+
+\begin{center}
+\begin{minipage}[c]{0.8\columnwidth}
+Encadrant professionnel: \hspace*{0.5cm} \textbf{\@proFramerName} 
+\end{minipage}
+
+\hfill
+\vskip0.5cm
+\begin{minipage}[c]{0.8\columnwidth}
+Encadrante académique: \hspace*{0.5cm} \textbf{\@academicFramerName} 
+\end{minipage}
+\hfill
+\end{center}
+
+\vskip1cm
+
+\begin{center}
+{Réalisé au sein de \@companyName}\\
+\vskip0.5cm
+\begin{figure}[h]
+\centering
+{\includegraphics[width=0.5\columnwidth]{tpl/Actia.png}}
+\end{figure}
+\end{center}
+\vskip0cm
+
+%\afterpage{\blankpage}

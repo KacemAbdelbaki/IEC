@@ -1,0 +1,43 @@
+\chapter{Context}
+
+\section{Introduction}
+This chapter provides the necessary background to understand the project. We first describe Interactive Evolutionary Computation (IEC) and its limitations. Then, we explain how eye-tracking technology works and which metrics are useful for predicting human preference. Finally, we introduce the machine learning algorithms used in this study: Support Vector Machines (SVM) and Gradient Boosting.
+
+\section{Interactive Evolutionary Computation (IEC)}
+Evolutionary Computation is a family of algorithms inspired by biological evolution. It uses mechanisms like reproduction, mutation, and selection to find the best solution to a problem.
+
+\subsection{The Role of the Human}
+In standard optimization, a mathematical formula calculates how "good" a solution is. However, in fields like art, music, or design, this formula does not exist.
+In **Interactive** Evolutionary Computation (IEC), a human user takes the role of the fitness function. The user looks at the solutions (for example, images on a screen) and selects the ones they prefer.
+
+\subsection{The Fatigue Problem}
+The main disadvantage of IEC is "User Fatigue."
+\begin{itemize}
+    \item \textbf{Cognitive Fatigue:} The brain gets tired of evaluating similar images over and over.
+\end{itemize}
+This fatigue causes the user to make mistakes or stop the process too early. To fix this, we need a system that can understand the user's preference without requiring constant manual input.
+
+\section{Eye-Tracking Technology}
+Eye-tracking is the process of measuring where a person is looking ("point of gaze") and the motion of an eye relative to the head. We use this technology to create an "Implicit" evaluation.
+
+\subsection{Key Metrics}
+Our system, the Tobii Pro Nano, captures several types of data:
+\begin{enumerate}
+    \item \textbf{Fixations:} Times when the eye is effectively still and processing information. A longer fixation often means more interest or deeper cognitive processing.
+    \item \textbf{Saccades:} Rapid movements between fixations. The speed and path of a saccade can indicate search efficiency.
+    \item \textbf{Pupil Diameter:} The size of the pupil changes not just with light, but with emotional response and mental effort (cognitive load).
+\end{enumerate}
+
+\section{Learning to Rank}
+The goal of this project is to rank images from "Best" to "Worst." This is different from standard classification (which just asks "Is this a cat or a dog?"). We use specific "Learning to Rank" algorithms.
+
+\subsection{Support Vector Machines (SVM)}
+A Support Vector Machine is a supervised learning model usually used for classification. It tries to find a hyperplane (a line in 3D) that separates two classes of data with the widest possible margin.
+For ranking, we use a technique called **Ranking SVM**. Instead of classifying an image as "Good" or "Bad," we classify the \textit{difference} between two images. If the model predicts the difference is positive, the first image is ranked higher.
+
+\subsection{Gradient Boosting (LightGBM)}
+Gradient Boosting is a machine learning technique that builds a prediction model in the form of an ensemble of weak prediction models, typically decision trees.
+\textbf{LightGBM} is a fast and efficient version of this. It is particularly good for ranking tasks because it supports the \textbf{LambdaRank} objective. This method optimizes the order of items directly, ensuring that the best items appear at the top of the list, which is exactly what we need for our Evolutionary Algorithm.
+
+\section*{Conclusion}
+We have seen that IEC is powerful but limited by human fatigue. Eye-tracking offers a way to capture user preference implicitly. By combining this data with ranking algorithms like SVM and LightGBM, we aim to build a surrogate model that can predict user choices and automate the optimization loop.
