@@ -1,0 +1,51 @@
+\chapter{Experiments and Results}
+
+\section{Introduction}
+In this chapter, we present the results of our experiments. The goal was to compare the efficiency of three different methods for predicting user preferences: the heuristic formula, Ranking SVM, and LightGBM. We first explain the metric used to measure success, then we analyze the performance of each model, and finally, we discuss which features were most important for the prediction.
+
+\section{Evaluation Metric: Kendall's Tau}
+Since our goal is to rank images (order them from best to worst), standard accuracy is not a good metric. Instead, we use **Kendall's Tau** ($\tau$), which is a correlation coefficient used to measure the similarity between two rankings.
+
+The formula is defined as:
+\begin{equation}
+    \tau = \frac{C - D}{C + D}
+\end{equation}
+Where:
+\begin{itemize}
+    \item \textbf{C (Concordant pairs):} The number of pairs that are in the same order in both the true ranking and the predicted ranking.
+    \item \textbf{D (Discordant pairs):} The number of pairs that are in the opposite order.
+\end{itemize}
+
+The value ranges from -1 to +1:
+\begin{itemize}
+    \item \textbf{+1:} Perfect match (the model predicts the exact same order as the user).
+    \item \textbf{0:} No correlation (random prediction).
+    \item \textbf{-1:} Completely reversed order.
+\end{itemize}
+
+\section{Experimental Results}
+We tested our three approaches on the test dataset (20\% of the data) to see how well they could predict the "True Rank" defined by the user.
+
+\subsection{Performance Comparison}
+The results show a clear hierarchy in performance:
+
+\begin{enumerate}
+    \item \textbf{Fitness Formula (Baseline):} $\tau = 0.3661$ \\
+    The heuristic formula performed poorly. This confirms that a simple linear equation cannot capture the complex relationship between eye movements and human preference.
+
+    \item \textbf{Ranking SVM:} $\tau = 0.8978$ \\
+    The SVM approach significantly improved the results. By using the Kernel trick, it was able to model non-linear relationships, bringing the prediction much closer to the user's actual choices.
+
+    \item \textbf{LightGBM:} $\tau = 0.9762$ \\
+    The Light Gradient Boosting Machine achieved the best performance. With a correlation of nearly 0.98, it is almost a perfect match. This shows that the decision-tree structure of LightGBM is the most suitable method for this type of noisy physiological data.
+\end{enumerate}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/results_graph.png}
+    \caption{Comparison of Kendall's Tau Correlation across models. LightGBM outperforms both the Baseline Formula and Ranking SVM.}
+    \label{fig:results_comparison}
+\end{figure}
+
+\section*{Conclusion}
+The experiments demonstrate that Machine Learning models are far superior to static formulas for implicit ranking. Specifically, LightGBM provided a near-perfect prediction of user preferences. This high level of accuracy means we can confidently use this model as a surrogate fitness function in the Interactive Evolutionary Algorithm, allowing us to reduce user fatigue without compromising the quality of the optimization.

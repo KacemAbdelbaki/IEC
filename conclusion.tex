@@ -1,0 +1,22 @@
+\chapter*{General Conclusion}
+\addcontentsline{toc}{chapter}{General Conclusion}
+
+Interactive Evolutionary Computation (IEC) has long been hampered by the "Human Bottleneck"—the fatigue caused by requiring users to manually evaluate thousands of potential solutions. The objective of this internship was to develop an implicit fitness function capable of predicting user preferences using eye-tracking data, thereby automating the evaluation process.
+
+\section*{Summary of Contributions}
+To address this challenge, we developed a complete machine learning pipeline:
+\begin{itemize}
+    \item \textbf{Data Analysis:} We extracted and cleaned 21 physiological features (fixations, saccades, pupil diameter) from raw eye-tracking signals.
+    \item \textbf{Methodology:} We implemented and compared three distinct approaches: a Heuristic Baseline, Ranking SVM, and LightGBM.
+    \item \textbf{Validation:} We designed a rigorous evaluation protocol using Temporal Split and Subject-Group Cross-Validation to ensure the results were realistic and robust.
+\end{itemize}
+
+\section*{Key Results}
+The experiments yielded decisive results. The proposed \textbf{LightGBM} model achieved a Kendall's Tau correlation of $\tau \approx 0.97$, vastly outperforming the heuristic baseline ($\tau \approx 0.36$) and Ranking SVM ($\tau \approx 0.89$). This demonstrates that machine learning can accurately decode the complex, non-linear relationship between eye movements and human preference.
+
+\section*{Perspectives}
+These results open the door to a new generation of "Fatigue-Free" evolutionary algorithms. By integrating this surrogate model into the optimization loop, we can theoretically run optimization tasks for much longer periods, exploring deeper solution spaces without exhausting the user.
+
+Future work should focus on the live integration of this model 
+%and the exploration of hybrid systems that combine implicit gaze tracking with occasional explicit user feedback
+. Ultimately, this work contributes a significant step towards making human-computer optimization more natural, efficient, and seamless.
