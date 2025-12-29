@@ -15,18 +15,35 @@ From the raw signal, we extracted \textbf{21 specific features} categorized into
 \end{itemize}
 
 \section{Data Preparation Strategy}
-A major challenge in analyzing evolutionary data is the "Temporal Drift." A user's criteria for ranking solutions can change significantly between the first and the last generation. Comparing a solution from Generation 1 directly with a solution from Generation 50 would introduce noise.
-
-To address this, we implemented a strict \textbf{Context Isolation} strategy.
+A major challenge in analyzing evolutionary data is the change over time in user behavior. A user’s criteria for ranking solutions can shift significantly between the first and the last generation. Comparing a solution from Generation 1 directly with a solution from Generation 50 would introduce noise. To address this, we implemented a strict same‑moment grouping strategy.
 
 \subsection{Grouping by Person and Generation}
 We grouped the dataset by \textbf{Person} and \textbf{Generation ID}. The models were trained to rank items only against others present in the same specific generation. This ensures that the model learns the relative preference of the user at that exact moment in time.
+
+\section{Validation Approaches}
+To rigorously assess the reliability of our models, we implemented two distinct cross-validation strategies. These protocols allow us to distinguish between the model's ability to generalize to new users versus its performance when calibrated to a specific user.
+
+\subsection{Approache A: Leave-Subjects-Out (LSO)}
+This approache tests the \textbf{Robustness} and \textbf{Universality} of the system.
+\begin{itemize}
+    \item \textbf{Method:} We split the dataset by \textit{Person ID}. The model is trained on $N-1$ users and tested on a completely new user it has never seen before.
+    \item \textbf{Objective:} To simulate a "Cold Start" scenario where a new user walks into the lab. If the model performs well here, it proves that it learns universal human gaze patterns rather than overfitting to specific individuals.
+\end{itemize}
+
+\subsection{Approache B: Leave-Subjects-In (LSI)}
+This approache tests the the system’s ability to \textbf{adapt} to an individual user.
+\begin{itemize}
+    \item \textbf{Method:} We mix the data from all users but keep specific \textit{Generations} intact.
+    \item \textbf{Process:} User A's Generation 1 might be in the training set, while User A's Generation 2 is in the test set.
+    \item \textbf{Objective:} To simulate a scenario where the system has already observed part of a user’s behavior and is asked to predict their future choices.
+\end{itemize}
 
 \section{The Heuristic Baseline}
 Before applying machine learning, we established a baseline using a weighted linear formula proposed by Denis Pallez. This heuristic attempts to calculate a fitness score based on rank-normalized features ($Rg$):
 
 \begin{equation}
-    Fitness = 0.0353 \times RgTrans + 0.3967 \times RgTime + 0.0208 \times RgDPMoy + \dots
+    % data['Fitness'] = (0.0353 * data['RgTrans'] + 0.3967 * data['RgTime'] + 0.0208 * data['RgDPMoy'] + 0.0416 * data['RgDPMaxVar'] + 2.6957)
+    Fitness = 0.0353 \times RgTrans + 0.3967 \times RgTime + 0.0208 \times RgDPMoy +  0.0416 \times RgDPMaxVar + 2.6957
 \end{equation}
 
 While interpretable, this formula assumes a fixed linear relationship between gaze behavior and preference, which may not capture complex user behaviors.
@@ -35,8 +52,7 @@ While interpretable, this formula assumes a fixed linear relationship between ga
 We implemented two distinct "Learning to Rank" approaches to outperform the baseline.
 
 \subsection{Ranking SVM (Pairwise Approach)}
-Support Vector Machines (SVM) are typically used for classification. To use them for ranking, we transformed the data into a \textbf{Pairwise} format.
-Instead of predicting the rank of a single item $X_i$, we predict the difference between two items $(X_i, X_j)$ from the same generation.
+Support Vector Machines (SVM) are typically used for classification. To use them for ranking, we transformed the data into a \textbf{Pairwise} format. Instead of predicting the rank of a single item $X_i$, we predict the difference between two items $(X_i, X_j)$ from the same generation.
 \begin{itemize}
     \item We generated pairs of competing solutions.
     \item We calculated the feature difference vector: $D_{ij} = X_i - X_j$.
@@ -48,15 +64,13 @@ This transformation allows the SVM to find a hyperplane that separates "better" 
 Light Gradient Boosting Machine (LGBM) is a decision-tree-based ensemble algorithm. Unlike SVM, LGBM can handle ranking problems directly using the \textbf{LambdaRank} objective function.
 
 \subsubsection{Relevance Score Transformation}
-The standard evolutionary algorithm uses ranks for minimization (Rank 1 is best). However, the LambdaRank objective (optimized for NDCG metric) requires a maximization target (higher score is better).
-We transformed the data as follows:
+The standard evolutionary algorithm uses ranks for minimization (Rank 1 is best). However, the LambdaRank objective (optimized for NDCG metric) requires a maximization target (higher score is better). We transformed the data as follows:
 \begin{itemize}
     \item \textbf{Input:} Groups of items defined by (Person, Generation).
     \item \textbf{Target:} We inverted the original rank using a quantile cut ($qcut$) function.
     \item \textbf{Result:} Rank 1 (Best) $\rightarrow$ Relevance 4 (High). Rank 4 (Worst) $\rightarrow$ Relevance 0 (Low).
 \end{itemize}
-
-This allows the model to learn the ranking structure within each generation group without explicitly creating millions of pairs, making it computationally more efficient than SVM for larger datasets.
+This allows the model to learn the ranking structure within each generation group without explicitly creating a large number of pairs, making it computationally more efficient than SVM for larger datasets.
 
 \section*{Conclusion}
 We have established a robust methodology that respects the temporal constraints of Interactive Evolutionary Computation. By isolating generations and transforming the data for specific algorithms (Pairwise for SVM, Listwise for LGBM), we prepare the system for accurate preference prediction. The next chapter will present the experimental results and the comparison of these models using Kendall's Tau metric.

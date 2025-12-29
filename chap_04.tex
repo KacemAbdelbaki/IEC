@@ -1,12 +1,10 @@
 \chapter{Experiments and Results}
 
 \section{Introduction}
-In this chapter, we present the results of our experiments. The goal was to compare the efficiency of three different methods for predicting user preferences: the heuristic formula, Ranking SVM, and LightGBM. We first explain the metric used to measure success, then we analyze the performance of each model, and finally, we discuss which features were most important for the prediction.
+In this chapter, we present the results of our experiments. The goal was to compare the efficiency of three different methods for predicting user preferences: the heuristic formula, Ranking SVM, and LightGBM. We first explain the metric used to measure success, then we analyze the performance of each model.
 
 \section{Evaluation Metric: Kendall's Tau}
-Since our goal is to rank images (order them from best to worst), standard accuracy is not a good metric. Instead, we use **Kendall's Tau** ($\tau$), which is a correlation coefficient used to measure the similarity between two rankings.
-
-The formula is defined as:
+Since our goal is to rank images (order them from best to worst), standard accuracy is not a good metric. Instead, we use \textbf{Kendall's Tau} ($\tau$), which is a correlation coefficient used to measure the similarity between two rankings. The formula is defined as:
 \begin{equation}
     \tau = \frac{C - D}{C + D}
 \end{equation}
@@ -37,7 +35,7 @@ The results show a clear hierarchy in performance:
     The SVM approach significantly improved the results. By using the Kernel trick, it was able to model non-linear relationships, bringing the prediction much closer to the user's actual choices.
 
     \item \textbf{LightGBM:} $\tau = 0.9762$ \\
-    The Light Gradient Boosting Machine achieved the best performance. With a correlation of nearly 0.98, it is almost a perfect match. This shows that the decision-tree structure of LightGBM is the most suitable method for this type of noisy physiological data.
+    The Light Gradient Boosting Machine achieved the best performance. With a correlation of nearly 0.98, it is almost a perfect match. This shows that the decision-tree structure of LightGBM is the most suitable method for this type of data.
 \end{enumerate}
 
 \begin{figure}[H]
@@ -46,6 +44,34 @@ The results show a clear hierarchy in performance:
     \caption{Comparison of Kendall's Tau Correlation across models. LightGBM outperforms both the Baseline Formula and Ranking SVM.}
     \label{fig:results_comparison}
 \end{figure}
+
+\subsection{Robustness Analysis: Universal vs. Personalized}
+Beyond the standard train/test split, we analyzed the stability of our models using the two protocols defined in Chapter 3. Table \ref{tab:cv_results} presents the mean Kendall's Tau ($\tau$) scores across 5 folds.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|l|c|c|}
+        \hline
+        \textbf{Validation Protocol} & \textbf{Ranking SVM ($\tau$)} & \textbf{LightGBM ($\tau$)} \\
+        \hline
+        \textbf{Leave-Subjects-Out (LSO)} & 0.8989 & 0.9707 \\
+        \textit{(New User / Robustness)} & & \\
+        \hline
+        \textbf{Leave-Subjects-In (LSI)} & 0.8993 & 0.9707 \\
+        \textit{(Calibrated User)} & & \\
+        \hline
+    \end{tabular}
+    \caption{Comparison of model performance on new vs. known users.}
+    \label{tab:cv_results}
+\end{table}
+
+\subsubsection{Interpretation of Stability}
+The results reveal a critical finding: **there is virtually no difference between LSO and LSI performance.**
+\begin{itemize}
+    \item The \textbf{LightGBM} model achieves a consistent accuracy of $\tau \approx 0.97$ regardless of whether it has seen the user before or not.
+    \item This implies that the physiological features extracted (pupil dilation, fixation time, etc.) represent **universal human cognitive markers**.
+    \item \textbf{Operational Impact:} This result suggests that a costly "Calibration Phase" for new users is unnecessary. The system can be deployed immediately for new subjects with near-optimal performance.
+\end{itemize}
 
 \section*{Conclusion}
 The experiments demonstrate that Machine Learning models are far superior to static formulas for implicit ranking. Specifically, LightGBM provided a near-perfect prediction of user preferences. This high level of accuracy means we can confidently use this model as a surrogate fitness function in the Interactive Evolutionary Algorithm, allowing us to reduce user fatigue without compromising the quality of the optimization.

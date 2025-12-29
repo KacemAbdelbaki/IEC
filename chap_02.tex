@@ -1,18 +1,18 @@
 \chapter{General Context and State of the Art}
 
 \section{Introduction}
-In the field of computer science, "optimization" traditionally involves finding the best mathematical solution. However, in creative domains such as design, art, or music, there is no mathematical formula to determine what is "good" or "bad". To address this, **Interactive Evolutionary Computation (IEC)** is used, a method inspired by biological evolution (reproduction, mutation, selection) where a human user takes on the role of the fitness function. Instead of relying on a formula, the user looks at solutions (e.g., images) and explicitly selects the ones they prefer.
+In the field of computer science, "optimization" traditionally involves finding the best mathematical solution. However, in creative domains such as design, art, or music, there is no mathematical formula to determine what is "good" or "bad". To address this, \textbf{Interactive Evolutionary Computation (IEC)} is used, a method inspired by biological evolution (reproduction, mutation, selection) where a human user takes on the role of the fitness function. Instead of relying on a formula, the user looks at solutions (e.g., images) and explicitly selects the ones they prefer.
 
 \section{Host Organization}
-This project was conducted at the **I3S Laboratory** (Sophia Antipolis), a research center for Computer Science, under the supervision of Mr. Denis Pallez.
+This project was conducted at the \textbf{I3S Laboratory} (Sophia Antipolis), a research center for Computer Science, under the supervision of Mr. Denis Pallez.
 
 \section{Problem Statement: The Human Bottleneck}
-A significant challenge in IEC is the "Human Bottleneck". While standard algorithms can check thousands of solutions per second, a human takes a long time to evaluate just one.
+A significant challenge in IEC is the "Human Bottleneck". While standard algorithms can check multiple solutions per second, a human takes a long time to evaluate just one.
 
-This leads to **User Fatigue** (specifically cognitive fatigue), where the brain gets tired of evaluating similar images repeatedly. Consequently, the user's choices become random and less consistent, or they may stop the program too early.
+This leads to \textbf{User Fatigue} (specifically cognitive fatigue), where the brain gets tired of evaluating similar images repeatedly. Consequently, the user's choices become random and less consistent.
 
 \section{Proposed Solution: Implicit Evaluation}
-To resolve this, the project aims to replace "Explicit" evaluation (manual clicking) with "Implicit" evaluation (subconscious looking). We use a **Tobii Pro Nano** eye-tracker to record gaze data, aiming to train an AI model to act as a **Surrogate Fitness Function** that understands user preference without requiring constant manual input.
+To resolve this, the project aims to replace "Explicit" evaluation (manual clicking) with "Implicit" evaluation (subconscious looking). We use a \textbf{Tobii Pro Nano} eye-tracker to record gaze data, aiming to train an AI model to act as a \textbf{Surrogate Fitness Function} that understands user preference without requiring constant manual input.
 
 \section{Eye-Tracking Technology}
 Eye-tracking measures the "point of gaze" and the motion of the eye relative to the head. The system captures key metrics useful for prediction:
@@ -26,10 +26,10 @@ Eye-tracking measures the "point of gaze" and the motion of the eye relative to 
 The goal is to rank images from "Best" to "Worst," which differs from standard classification. We utilize specific "Learning to Rank" algorithms:
 
 \subsection{Support Vector Machines (SVM)}
-While standard SVMs find a hyperplane to separate classes, **Ranking SVM** classifies the \textit{difference} between two images. If the predicted difference is positive, the first image is ranked higher.
+While standard SVMs find a hyperplane to separate classes, \textbf{Ranking SVM} classifies the \textit{difference} between two images. If the predicted difference is positive, the first image is ranked higher.
 
 \subsection{Gradient Boosting (LightGBM)}
-**LightGBM** is a fast implementation of gradient boosting that uses decision trees. It is particularly effective for ranking because it supports the **LambdaRank** objective, optimizing the order of items directly to ensure the best items appear at the top.
+\textbf{LightGBM} is a fast implementation of gradient boosting that uses decision trees. It is particularly effective for ranking because it supports the \textbf{LambdaRank} objective, optimizing the order of items directly to ensure the best items appear at the top.
 
 \section*{Conclusion}
 IEC is powerful but limited by human fatigue. By combining implicit eye-tracking data with ranking algorithms like SVM and LightGBM, we aim to build a surrogate model that can predict user choices and automate the optimization loop.
