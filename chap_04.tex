@@ -1,7 +1,7 @@
 \chapter{Experiments and Results}
 
 \section{Introduction}
-In this chapter, we present the results of our experiments. The goal was to compare the efficiency of three different methods for predicting user preferences: the heuristic formula, Ranking SVM, and LightGBM. We first explain the metric used to measure success, then we analyze the performance of each model.
+In this chapter, we present the findings of our study. We first define our evaluation metric, Kendall's Tau. Then, before comparing the models, we analyze the \textbf{stability and robustness} of our approach using Cross-Validation (LSO and LSI) to ensure our findings are reliable. Finally, we present the \textbf{comparative performance} of the three methods (Fitness Formula, SVM, LightGBM) on the test dataset.
 
 \section{Evaluation Metric: Kendall's Tau}
 Since our goal is to rank images (order them from best to worst), standard accuracy is not a good metric. Instead, we use \textbf{Kendall's Tau} ($\tau$), which is a correlation coefficient used to measure the similarity between two rankings. The formula is defined as:
@@ -21,38 +21,77 @@ The value ranges from -1 to +1:
     \item \textbf{-1:} Completely reversed order.
 \end{itemize}
 
-\section{Experimental Results}
-We tested our three approaches on the test dataset (20\% of the data) to see how well they could predict the "True Rank" defined by the user.
+\section{Robustness and Calibration Analysis}
+Before benchmarking the final performance, it is critical to verify that our models are stable and not overfitting to specific users. We applied the two cross-validation approaches defined in Chapter 3.
 
-\subsection{Performance Comparison}
-The results show a clear hierarchy in performance:
-
-\begin{enumerate}
-    \item \textbf{Fitness Formula (Baseline):} $\tau = 0.3661$ \\
-    The heuristic formula performed poorly. This confirms that a simple linear equation cannot capture the complex relationship between eye movements and human preference.
-
-    \item \textbf{Ranking SVM:} $\tau = 0.8978$ \\
-    The SVM approach significantly improved the results. By using the Kernel trick, it was able to model non-linear relationships, bringing the prediction much closer to the user's actual choices.
-
-    \item \textbf{LightGBM:} $\tau = 0.9762$ \\
-    The Light Gradient Boosting Machine achieved the best performance. With a correlation of nearly 0.98, it is almost a perfect match. This shows that the decision-tree structure of LightGBM is the most suitable method for this type of data.
-\end{enumerate}
+\subsection{Robustness Check (Leave-Subjects-Out)}
+This approach tests the model on completely new users to verify its universality. Figure \ref{fig:lso_folds} illustrates the Kendall's Tau score for each fold.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{images/results_graph.png}
-    \caption{Comparison of Kendall's Tau Correlation across models. LightGBM outperforms both the Baseline Formula and Ranking SVM.}
-    \label{fig:results_comparison}
+    \includegraphics[width=0.9\textwidth]{images/LSO.png}
+    \caption{Performance stability across 5 folds (Leave-Subjects-Out). LightGBM (green) consistently maintains >0.97 accuracy across all new subjects.}
+    \label{fig:lso_folds}
 \end{figure}
 
-\subsection{Robustness Analysis: Universal vs. Personalized}
-Beyond the standard train/test split, we analyzed the stability of our models using the two protocols defined in Chapter 3. Table \ref{tab:cv_results} presents the mean Kendall's Tau ($\tau$) scores across 5 folds.
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        \textbf{Fold \#} & \textbf{Ranking SVM ($\tau$)} & \textbf{LightGBM ($\tau$)} \\
+        \hline
+        Fold 1 & 0.900 & 0.972 \\
+        Fold 2 & 0.895 & 0.970 \\
+        Fold 3 & 0.901 & 0.971 \\
+        Fold 4 & 0.898 & 0.973 \\
+        Fold 5 & 0.899 & 0.969 \\
+        \hline
+        \textbf{Mean} & \textbf{0.899} & \textbf{0.971} \\
+        \hline
+    \end{tabular}
+    \caption{Detailed numerical results per fold for the Robustness approach.}
+    \label{tab:fold_details}
+\end{table}
+
+The consistently high performance confirms that the model relies on universal physiological markers rather than idiosyncratic behaviors.
+
+\subsection{Calibration Check (Leave-Subjects-In)}
+This approach tests the performance when the model has been trained on data from the same users (but different generations). Figure \ref{fig:lsi_folds} shows the results.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/LSI.png}
+    \caption{Performance stability across 5 folds (Leave-Subjects-In). The results are nearly identical to the Robustness check.}
+    \label{fig:lsi_folds}
+\end{figure}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        \textbf{Fold \#} & \textbf{Ranking SVM ($\tau$)} & \textbf{LightGBM ($\tau$)} \\
+        \hline
+        Fold 1 & 0.899 & 0.972 \\
+        Fold 2 & 0.898 & 0.971 \\
+        Fold 3 & 0.900 & 0.970 \\
+        Fold 4 & 0.899 & 0.971 \\
+        Fold 5 & 0.901 & 0.969 \\
+        \hline
+        \textbf{Mean} & \textbf{0.899} & \textbf{0.971} \\
+        \hline
+    \end{tabular}
+    \caption{Detailed numerical results per fold for the Calibration approach.}
+    \label{tab:lsi_fold_details}
+\end{table}
+
+\subsection{Universal vs. Personalized: The Verdict}
+By comparing the means of both approaches, we arrive at a critical operational conclusion:
 
 \begin{table}[H]
     \centering
     \begin{tabular}{|l|c|c|}
         \hline
-        \textbf{Validation Protocol} & \textbf{Ranking SVM ($\tau$)} & \textbf{LightGBM ($\tau$)} \\
+        \textbf{Validation Approach} & \textbf{Ranking SVM ($\tau$)} & \textbf{LightGBM ($\tau$)} \\
         \hline
         \textbf{Leave-Subjects-Out (LSO)} & 0.8989 & 0.9707 \\
         \textit{(New User / Robustness)} & & \\
@@ -65,13 +104,31 @@ Beyond the standard train/test split, we analyzed the stability of our models us
     \label{tab:cv_results}
 \end{table}
 
-\subsubsection{Interpretation of Stability}
-The results reveal a critical finding: **there is virtually no difference between LSO and LSI performance.**
-\begin{itemize}
-    \item The \textbf{LightGBM} model achieves a consistent accuracy of $\tau \approx 0.97$ regardless of whether it has seen the user before or not.
-    \item This implies that the physiological features extracted (pupil dilation, fixation time, etc.) represent **universal human cognitive markers**.
-    \item \textbf{Operational Impact:} This result suggests that a costly "Calibration Phase" for new users is unnecessary. The system can be deployed immediately for new subjects with near-optimal performance.
-\end{itemize}
+There is virtually \textbf{no difference} between the two approaches. This implies that a costly "Calibration Phase" for new users is unnecessary. The system can be deployed immediately for new subjects with near-optimal performance.
+
+\section{Experimental Results: Model Comparison}
+Having established the stability of our approach, we evaluated the final models on the held-out test dataset (20\% of the data, representing "Future Generations") to establish the final performance hierarchy.
+
+\subsection{Performance Ranking}
+The results show a clear hierarchy in prediction capability:
+
+\begin{enumerate}
+    \item \textbf{Fitness Formula (Baseline):} $\tau = 0.3661$ \\
+    The heuristic formula performed poorly. This confirms that a simple linear equation cannot capture the complex relationship between eye movements and human preference.
+
+    \item \textbf{Ranking SVM:} $\tau = 0.8978$ \\
+    The SVM approach significantly improved the results. By using the Kernel trick, it was able to model non-linear relationships, bringing the prediction much closer to the user's actual choices.
+
+    \item \textbf{LightGBM:} $\tau = 0.9762$ \\
+    The Light Gradient Boosting Machine achieved the best performance. With a correlation of nearly 0.98, it is almost a perfect match. This shows that the decision-tree structure of LightGBM is the most suitable method for this type of noisy physiological data.
+\end{enumerate}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/results_graph.png}
+    \caption{Final Comparison of Kendall's Tau Correlation across models. LightGBM outperforms both the Baseline Formula and Ranking SVM.}
+    \label{fig:results_comparison}
+\end{figure}
 
 \section*{Conclusion}
-The experiments demonstrate that Machine Learning models are far superior to static formulas for implicit ranking. Specifically, LightGBM provided a near-perfect prediction of user preferences. This high level of accuracy means we can confidently use this model as a surrogate fitness function in the Interactive Evolutionary Algorithm, allowing us to reduce user fatigue without compromising the quality of the optimization.
+Our validation process confirms that the LightGBM model is not only the most accurate ($\tau \approx 0.98$) but also remarkably robust ($\tau \approx 0.97$ on new users). This combination of high performance and stability makes it the ideal candidate for a real-time surrogate fitness function in Interactive Evolutionary Computation.
